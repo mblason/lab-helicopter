@@ -35,12 +35,9 @@ class Helicopter {
             this.w,
             this.h
         )
-        this.animate()
+        this.animate();
         this.weapon.draw();
-
     }
-
-    isFloor() {}
 
     move() {
         this.applyActions();
@@ -48,7 +45,8 @@ class Helicopter {
     }
 
     animate() {
-        this.tick++
+        this.tick++;
+
         if (this.tick > 4) {
             this.tick = 0
             this.img.frameIndex++
@@ -60,8 +58,8 @@ class Helicopter {
     }
 
     setListeners() {
-        document.onkeydown = e => this.switchAction(e.key, true)
-        document.onkeyup = e => this.switchAction(e.key, false)
+        document.onkeydown = e => this.switchAction(e.key, true);
+        document.onkeyup = e => this.switchAction(e.key, false);
     }
 
     applyActions() {

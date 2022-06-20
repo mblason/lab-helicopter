@@ -3,6 +3,8 @@ class Bullet {
         this.ctx = ctx;
         this.x = x;
         this.y = y;
+        this.w = 1;
+        this.h = 1;
         this.vx = 8;
     }
 

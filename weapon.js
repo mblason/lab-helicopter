@@ -8,13 +8,15 @@ class Weapon {
     this.isReloading = false;
     this.bulletsCounter = 0;
   }
-
+ 
   shoot() {
     this.tickBullet++;
-
+    
     if (this.tickBullet > 2) {
       this.tickBullet = 0;
-      if(!this.isReloading) {
+      this.clearBullets();
+
+      if(!this.isReloading) {        
         this.bullets.push(new Bullet(this.ctx ,this.shooter.x + this.shooter.w, this.shooter.y + this.shooter.h));
         this.bulletsCounter++;
       }
@@ -26,8 +28,7 @@ class Weapon {
       setTimeout(() => {
         this.isReloading = false;
       }, 700)
-    }
- 
+    } 
   }
 
   clearBullets() {
